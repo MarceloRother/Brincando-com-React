@@ -1,13 +1,22 @@
-function Evento({ numero }) {
+import { useState } from "react"
+
+function Evento() {
 
     function meuEvento() {
-        console.log(`Opa, fui ativado! ${numero}`)
+        console.log(`Opa, fui ativado! ${contador}`)
+    }
+
+    const [contador, setContador] = useState(0)
+
+    function handClick() {
+        setContador(contador + 1)
+        meuEvento()
     }
 
     return (
         <div>
             <p>Clique para disparar um evento:</p>
-            <button onClick={meuEvento}>Ativar!</button>
+            <button onClick={handClick}>Ativar!</button>
         </div>
     )
 }
