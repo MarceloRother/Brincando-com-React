@@ -1,22 +1,19 @@
-import { useState } from "react"
+import Button from "./evento/Button"
 
 function Evento() {
-
     function meuEvento() {
-        console.log(`Opa, fui ativado! ${contador}`)
+        console.log(`Ativando primeiro evento!`)
     }
 
-    const [contador, setContador] = useState(0)
-
-    function handClick() {
-        setContador(contador + 1)
-        meuEvento()
+    function segundoEvento() {
+        console.log(`Ativando o segundo evento`)
     }
 
     return (
         <div>
             <p>Clique para disparar um evento:</p>
-            <button onClick={handClick}>Ativar!</button>
+            <Button event={meuEvento} text="Primeiro Evento"/>
+            <Button event={segundoEvento} text="Segundo Evento"/>
         </div>
     )
 }
