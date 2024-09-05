@@ -1,17 +1,6 @@
 {
   "projects": [
     {
-      "id": "88e3",
-      "name": "Robinson C",
-      "budget": "10000000000000000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
       "id": "f0f3",
       "name": "Kurama Atualizado",
       "budget": "15000",
@@ -21,6 +10,42 @@
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "99ac",
+      "name": "Robinson C Atualizado",
+      "budget": "7000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 2110,
+      "services": [
+        {
+          "name": "Meu novo servico",
+          "cost": "100",
+          "description": "Faz isso",
+          "id": "4b169f72-96dd-4496-8fca-762b2dd0f2a7"
+        },
+        {
+          "name": "Servico 2",
+          "cost": "1000",
+          "description": "Faz aquilo",
+          "id": "29947d61-629a-4136-9fa5-f6f16c8e987f"
+        },
+        {
+          "name": "Servico 2",
+          "cost": "1000",
+          "description": "Faz aquilo",
+          "id": "73747908-c448-43d5-9ffe-98d3596ad5c6"
+        },
+        {
+          "name": "Servico 2",
+          "cost": "10",
+          "description": "Faz aquilo",
+          "id": "0d7e4957-cea0-4fe9-b8a0-57a0888e246d"
+        }
+      ]
     }
   ],
   "categories": [
