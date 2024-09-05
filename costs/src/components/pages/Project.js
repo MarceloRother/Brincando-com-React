@@ -100,14 +100,41 @@ function Project() {
       .then((resp) => resp.json())
       .then((data) => {
         // exibir servicos
-        setMessage("Servico adicionado!");
         setType("success");
-        setShowServiceForm(false)
+        setMessage("Servico adicionado!");
+        setShowServiceForm(false);
       })
       .catch((err) => console.log(err));
   }
 
-  function removeService() {}
+  function removeService(id, cost) {
+    setMessage('')
+
+    const servicesUpdate = project.services.filter(
+      (service) => service.id !== id
+    );
+
+    const projectUpdate = project;
+
+    projectUpdate.services = servicesUpdate;
+    projectUpdate.cost = parseFloat(projectUpdate) - parseFloat(cost);
+
+    fetch(`http://localhost:5000/projects/${projectUpdate.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectUpdate),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(projectUpdate)
+        setServices(servicesUpdate)
+        setType('success')
+        setMessage('Servico removido com sucesso!')
+      })
+      .catch((err) => console.log(err));
+  }
 
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm);
@@ -174,7 +201,7 @@ function Project() {
                     name={service.name}
                     cost={service.cost}
                     description={service.description}
-                    key={service.id} // Usei service.id, pois geralmente `key` deve ser único e `service.key` pode não existir
+                    key={service.id} 
                     handleRemove={removeService}
                   />
                 ))}

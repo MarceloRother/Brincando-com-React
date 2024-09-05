@@ -8,21 +8,8 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 1712,
-      "services": [
-        {
-          "name": "Correio",
-          "cost": "1500",
-          "description": "Nao entrega",
-          "id": "aaa73a8b-69f0-41e1-9d82-c72cd71868cb"
-        },
-        {
-          "name": "Correio",
-          "cost": "212",
-          "description": "Faz isso",
-          "id": "9f57d46e-88c6-4abb-bfd7-761d6beff4c8"
-        }
-      ]
+      "cost": null,
+      "services": []
     }
   ],
   "categories": [
